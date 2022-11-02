@@ -1,0 +1,34 @@
+
+<span class="p-float-label">
+    <input id="txtvalue" type="text" pInputText> 
+    <label for="float-input">Isi Data</label>
+</span>
+
+
+<button pButton type="button" (click)="add()" label="Add/Update" ></button>
+<button pButton type="button" (click)="get()" label="getData" ></button>
+<button pButton type="button" (click)="delete()" label="Delete" ></button>
+<button pButton type="button" (click)="sync()" label="Sync" ></button>
+
+<label>Your value is {{getvalue}}</label>
+
+
+<p-table [value]="rows" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+ [rowsPerPageOptions]="[10,25,50]">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rows>
+        <tr>
+            <td>{{rows.id}}</td>
+            <td>{{rows.email}}</td>
+            <td>{{rows.first_name}}</td>
+            <td>{{rows.last_name}}</td>
+        </tr>
+    </ng-template>
+</p-table>
